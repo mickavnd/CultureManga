@@ -34,3 +34,20 @@ h2{
 .h4{
     font-size: 30px;
 }
+
+/*========================= page News================*/
+.Pnew{
+height: 700px;
+border: 1px solid red;
+}
+
+
+
+.new{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
