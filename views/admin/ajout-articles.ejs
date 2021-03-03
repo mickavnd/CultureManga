@@ -1,0 +1,61 @@
+<%- include('partials-admin/header-admin.ejs')%>
+
+<section class="body">
+
+  <section class=from>
+    <form action="/admin/ajout-articles" method="POST">
+
+
+
+      <div class="md-3">
+        <label for="exampleFormControlInput1" class="form-label">Titre de l'article</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="titre">
+      </div>
+  
+        <div class="mb-4">
+          <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+        </div>
+      </div>
+      </div>
+
+
+
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" name="image" id="inputGroupFile02">
+        <label class="input-group-text"  for="inputGroupFile02">importer</label>
+      </div>
+
+
+
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="categorieId">
+        <% categorie.forEach(function(categorie)  {%>
+        <option value="<%=categorie.categorieId%>">
+
+        <%=categorie.categorie%>
+        </option> 
+        
+      
+        <%});%>
+      </select>
+
+
+
+
+
+
+      <button type="submit">Ajouter</button>
+
+
+
+
+
+    </form>
+
+
+
+
+
+
+  </section>
+</section>

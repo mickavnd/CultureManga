@@ -31,9 +31,17 @@ db.connect(
  global.querysql=util.promisify(db.query).bind(db)
 
 
+ 
+
 
 //ejs
 app.set('view engine','ejs')
+
+//middleware -body parser
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
+
+
 
 //dossier static (public)
 app.use(express.static(path.join(__dirname,'public')));
@@ -49,14 +57,10 @@ app.use("/",pageHomeRoute)
 app.use("/admin",PageAdminRoute)
 
 
-
-
-
-
-
-
-
 //serveur
-app.listen(1997,()=>{
+app.listen(3000,()=>{
     console.log("serveur ok");
 })
+
+
+
