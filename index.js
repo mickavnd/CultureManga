@@ -2,7 +2,9 @@ const express = require('express')
 const path = require ('path')
 const mysql = require('mysql')
 const util =require ('util')
+const methodOverride = require('method-override')
 const app = express()
+
 require('dotenv').config()
 
 //mysql
@@ -31,8 +33,9 @@ db.connect(
  global.querysql=util.promisify(db.query).bind(db)
 
 
- 
+ // methode OVERRIDE
 
+app.use(methodOverride('X-HTTP-Method-Override'));
 
 //ejs
 app.set('view engine','ejs')
