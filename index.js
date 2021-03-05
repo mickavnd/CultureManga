@@ -3,6 +3,7 @@ const path = require ('path')
 const mysql = require('mysql')
 const util =require ('util')
 const methodOverride = require('method-override')
+const  fileUpload = require('express-fileupload')
 const app = express()
 
 require('dotenv').config()
@@ -35,8 +36,13 @@ db.connect(
 
  // methode OVERRIDE
 
-app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(methodOverride('_method'));
 
+//fileupload
+app.use(fileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+  }));
+  
 //ejs
 app.set('view engine','ejs')
 
@@ -64,6 +70,8 @@ app.use("/admin",PageAdminRoute)
 app.listen(3000,()=>{
     console.log("serveur ok");
 })
+
+
 
 
 

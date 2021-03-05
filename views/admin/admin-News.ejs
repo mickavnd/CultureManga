@@ -5,8 +5,9 @@
  <section class="liste-des-articles" >
 <div class="articles">
     <p>il y a...dans la categorie News </p>
-    
-    <table class="table">
+  
+
+ <table class="table">
         <thead>
           <tr>
             <th scope="col">orde de publication</th>
@@ -18,16 +19,16 @@
           </tr>
         </thead>
         <tbody>
-          <% articleNew.forEach(function(News) {%>
+          <% articleNew.forEach(function(news) {%>
           <tr>
-            <th scope="row"><%=News.articleId%></th>
-            <td><%=News.titre%></td>
-            <td> <img src="/image/<%=News.image%>" class="image-thumbnail" height="100px" alt=""></td>
-            <td><%=News.description%></td>
-            <form action="/admin/modification-articles">
-              <td><button type="submit" class="btn btn-primary">modifier</button></td>
-            </form>
-            <form action="">
+            <th scope="row"><%=news.articlesId%></th>
+            <td><%=news.titre%></td>
+            <td> <img src="/image/<%=news.image%>" class="image-thumbnail" height="100px" alt=""></td>
+            <td><%=news.description%></td>
+         
+              <td> <a href="/admin/modification-articles/<%=news.articlesId%>"><button type="button" class="btn btn-primary">modifier</button></td></a>
+            
+        
                 <td><button type="submit" class="btn btn-danger">supprimer</button></td>
             </form>
           
@@ -35,7 +36,10 @@
           
           <%});%>
         </tbody>
-      </table>
+      </table
+
+  >
+  
 
 
 
