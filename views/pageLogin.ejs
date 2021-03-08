@@ -1,0 +1,57 @@
+<%- include('partials/header.ejs')%>
+
+<% if (message.length>0){ %>
+
+        <div><%=message%></div>
+    <%}
+    %>
+<section class="body">
+
+
+    
+   
+    <section class=from>
+      <form action="/auth/login" method="POST" >
+  
+  
+  
+        
+        <div class="md-3">
+            <label for="exampleFormControlInput1" class="form-label">email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" name="email">
+          </div>
+          
+        <div class="md-3">
+            <label for="exampleFormControlInput1" class="form-label">mot de passe</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" name="password">
+          </div>
+    
+         
+  
+  
+        
+  
+  
+  
+      
+  
+  
+  
+  
+  
+  
+        <button type="submit">Ajouter</button>
+  
+  
+  
+  
+  
+      </form>
+  
+  
+  
+  
+  
+  
+    </section>
+  </section>

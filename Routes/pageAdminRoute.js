@@ -19,7 +19,8 @@ router.get("/modification-articles/:id",pageModificationController.getModificati
 //modifier article
 router.put("/modification-articles/:id",pageModificationController.putModificationArticles)
 
-
+//supprimer articles
+router.get("/News/:Id",pageAjoutArticlesController.getDeleteArticles)
 
 
 

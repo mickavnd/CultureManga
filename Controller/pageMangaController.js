@@ -1,6 +1,4 @@
 
-
-
 //affichage des News
 exports.getPageManga= async(req,res) => {
 

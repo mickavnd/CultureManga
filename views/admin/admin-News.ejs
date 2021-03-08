@@ -1,50 +1,61 @@
 <%- include('partials-admin/header-admin.ejs')%>
- <%- include('partials-admin/side-bar.ejs')%>
- <%- include('partials-admin/top-bar.ejs')%>
+  <%- include('partials-admin/side-bar.ejs')%>
+    <%- include('partials-admin/top-bar.ejs')%>
 
- <section class="liste-des-articles" >
-<div class="articles">
-    <p>il y a...dans la categorie News </p>
-  
-
- <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">orde de publication</th>
-            <th scope="col">titre</th>
-            <th scope="col">image</th>
-            <th scope="col">descritption</th>
-            <th scope="col">modifier</th>
-            <th scope="col">supprimer</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% articleNew.forEach(function(news) {%>
-          <tr>
-            <th scope="row"><%=news.articlesId%></th>
-            <td><%=news.titre%></td>
-            <td> <img src="/image/<%=news.image%>" class="image-thumbnail" height="100px" alt=""></td>
-            <td><%=news.description%></td>
-         
-              <td> <a href="/admin/modification-articles/<%=news.articlesId%>"><button type="button" class="btn btn-primary">modifier</button></td></a>
-            
-        
-                <td><button type="submit" class="btn btn-danger">supprimer</button></td>
-            </form>
-          
-          </tr>
-          
-          <%});%>
-        </tbody>
-      </table
-
-  >
-  
+      <section class="liste-des-articles">
+        <div class="articles">
+          <p>il y a...dans la categorie News </p>
 
 
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">orde de publication</th>
+                <th scope="col">titre</th>
+                <th scope="col">image</th>
+                <th scope="col">descritption</th>
+                <th scope="col">modifier</th>
+                <th scope="col">supprimer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% articleNew.forEach(function(news) {%>
+                <tr>
+                  <th scope="row">
+                    <%=news.articlesId%>
+                  </th>
+                  <td>
+                    <%=news.titre%>
+                  </td>
+                  <td> <img src="/image/<%=news.image%>" class="image-thumbnail" height="100px" alt=""></td>
+                  <td>
+                    <%=news.description%>
+                  </td>
 
-</section>
+                  <td> <a href="/admin/modification-articles/<%=news.articlesId%>"><button type="button"
+                        class="btn btn-primary">modifier</button></td></a>
+
+
+                  <form action="/admin/News/<%=news.articlesId%>" method="GET
+                    
+                    ">
+                    <td><button type="submit" class="btn btn-danger">supprimer</button></td>
+                  </form>
 
 
 
-<%- include('partials-admin/footer-admin.ejs')%>
+
+                </tr>
+
+                <%});%>
+            </tbody>
+          </table>
+
+
+
+
+      </section>
+
+
+
+      <%- include('partials-admin/footer-admin.ejs')%>

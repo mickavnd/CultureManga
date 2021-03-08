@@ -50,3 +50,11 @@ console.log(uploadImage);
 
 
 }
+
+// supprimer articles
+ exports.getDeleteArticles= async(req,res)=>{
+      const Id = req.params.Id
+       await querysql("DELETE FROM article where articlesId = ?",[Id])
+      res.redirect('/admin/News')
+
+ }

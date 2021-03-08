@@ -1,6 +1,4 @@
 
-
-
 //affichage des News
 exports.getPageAnime = async(req,res) => {
 
